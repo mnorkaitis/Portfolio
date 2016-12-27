@@ -1,7 +1,11 @@
-
-<?php // Include header
-include ("modules/header.php")
-?>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Matt Norkaitis Portfolio - Thanks for the Visit</title>
+	<?php // Include header
+	include ("modules/head.php")
+	?>
+</head>
 
 <body>
 
@@ -9,29 +13,7 @@ include ("modules/header.php")
 	include ("modules/nav.php");
 	?>
 
-
-	<?php
-
-		if (isset( $pageNav )) {
-			if ( $pageNav == "home") {
-				include ("modules/home.php");
-			}
-			else if ( $pageNav == "modeling") {
-				include ("modules/modeling.php");
-			}
-			else if ( $pageNav == "painting") {
-				include ("modules/painting.php");
-			}
-			else if ( $pageNav == "front-end") {
-				include ("modules/front-end.php");
-			}
-			else if ( $pageNav == "contact") {
-				include ("modules/contact.php");
-			}
-		}
-
-	?>
-
+	<h1>INDEX</h1>
 
 	<?php // Include footer
 	include ("modules/footer.php");

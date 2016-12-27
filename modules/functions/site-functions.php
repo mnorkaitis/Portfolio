@@ -28,10 +28,9 @@ function return_items_from_category($database, $databaseSkill) {
   return array_keys($output);
 }
 
-
 // list of database items in the <li> format. Passes in a database, items in the database are displayed based on their keys
 function list_items_with_html($id, $databaseItem) {
-  $output = "<li><a href='portfolio-item.php?pageId=" . $id . "'><img src='" . $databaseItem["img_src"] . "' alt='" . $databaseItem["title"] . "'>
+  $output = "<li><a href='/portfolio-item.php?pageId=" . $id . "'><img src='" . $databaseItem["img_src"] . "' alt='" . $databaseItem["title"] . "'>
       <p>" . $databaseItem["title"] . "</p></a></li>";
   return $output;
 }

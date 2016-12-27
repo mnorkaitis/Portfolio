@@ -1,7 +1,5 @@
 <?php
-
-// Get main Category based ?page var
-
+// Use $_GET to see what page is being displayed below
 if (isset($_GET["page"])) {
   if ($_GET["page"] == "modeling"){
     $pageTitle = "3d Modeling";
@@ -19,23 +17,23 @@ if (isset($_GET["page"])) {
     $pageTitle = "Contact";
     $pageNav = "contact";
   }
+  else if ($_GET["page"] == "architecture"){
+    $pageTitle = "Architecture";
+    $pageNav = "architecture";
+  }
 }
   else {
     $pageTitle = "Welcome";
     $pageNav = "home";
-}
-?>
+} ?>
 
-
+<?php //Nav highlights the current page from $_GET  ?>
 <nav>
   <ul>
-    <li class="nav-link <?php if ($pageNav == "modeling") {echo "nav-link-select";} ?> "><a href="/?page=modeling">Computer Modeling</a></li>
-    <li class="nav-link <?php if ($pageNav == "painting") {echo "nav-link-select";} ?> "><a href="/?page=painting">Digital Painting</a></li>
-    <li class="nav-link <?php if ($pageNav == "front-end") {echo "nav-link-select";} ?> "><a href="/?page=front-end">Front End Development</a></li>
-    <li class="nav-link <?php if ($pageNav == "contact") {echo "nav-link-select";} ?> "><a href="/?page=contact">Contact</a></li>
+    <li class="nav-link <?php if ($pageNav == "painting") {echo "nav-link-select";} ?> "><a href="/digital-painting.php/?page=painting">Digital Painting</a></li>
+    <li class="nav-link <?php if ($pageNav == "front-end") {echo "nav-link-select";} ?> "><a href="/front-end.php/?page=front-end">Front End Development</a></li>
+    <li class="nav-link <?php if ($pageNav == "architecture") {echo "nav-link-select";} ?> "><a href="/architecture.php/?page=architecture">Architecture</a></li>
+    <li class="nav-link <?php if ($pageNav == "modeling") {echo "nav-link-select";} ?> "><a href="/modeling.php/?page=modeling">Character Modeling</a></li>
+    <li class="nav-link <?php if ($pageNav == "contact") {echo "nav-link-select";} ?> "><a href="/contact.php/?page=contact">Contact</a></li>
   </ul>
 </nav>
-
-<div class="BREADCRUMBS">
- <a href="index.php">Home</a> &gt; <a href="index.php?page=<?php echo $pageNav; ?>"><?php echo $pageNav; ?></a>
-</div>

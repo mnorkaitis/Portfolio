@@ -17,15 +17,17 @@ if ($_POST["Hpot"] != "") {
 
   // If either are blank, show error on contact page
   if ($contactName == "" || $contactEmail == "" || $contactMessage == "") {
-    header("location:/index.php?page=contact&email=error-blank");
+    header("location:../contact.php?page=contact&email=error-blank");
+    exit;
   }
-  elseif {
+  else {
     $mail = new PHPMailer;
     // If email is not valid
     if (!$mail->ValidateAddress($contactEmail)) {
-    // Show invalid email error on contact page
-      header("location:/index.php?page=contact&email=error-invalid");
+      // Show invalid email error on contact page
+      header("location:../contact.php?page=contact&email=error-invalid");
     }
+  }
 
     // Arrange email's body
     $emailBody = "Name " . $contactName;
@@ -83,6 +85,6 @@ if ($_POST["Hpot"] != "") {
       echo 'Message has been sent';
     }
 
-    header("location:/index.php?page=contact&email=thanks");  // Redirect header to contact page
-  }
+    header("location:../contact.php?page=contact&email=thanks");  // Redirect header to contact page
+
 ?>

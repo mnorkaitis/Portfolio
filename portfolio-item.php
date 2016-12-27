@@ -1,32 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <?php
+  include ("modules/head.php");
 
-<?php // Include header
-include ("modules/header.php")
-?>
+  // This page shows sub items, so we determine if the incoming link has the ?pageId var set If so we store the data on this item in $pagePortfolioItem
+  if (isset($_GET["pageId"])) {
+    $pageId = $_GET["pageId"];
+    if (isset($portfolioArray[$pageId])){
+      $pagePortfolioItem = $portfolioArray[$pageId];
+    }
+  }
+  // For this page, we dont want to show it without an legit item ID, so if the ID is blank redirect
+  if (!isset($pagePortfolioItem)) {
+    header("location:index.php");
+    exit;
+  }
+
+  //Set pageTitle from $pagePortfolioItem title
+  $pageTitle = $pagePortfolioItem["title"];
+  ?>
+  <title><?php echo $pageTitle; ?> - Matt Norkaitis</title>
+
+</head>
 
 <body>
-
 
             <!-- Temporary in page HTML -->
             <?php
 
-            // This page shows sub items, so we determine if the incoming link has the ?pageId var set
-            // If so we store the data on this item in $pagePortfolioItem
 
-            if (isset($_GET["pageId"])) {
-              $pageId = $_GET["pageId"];
-              if (isset($portfolioArray[$pageId])){
-                $pagePortfolioItem = $portfolioArray[$pageId];
-              }
-            }
 
-            // For this page, we dont want to show it without an legit item ID, so if the ID is blank redirect
-            if (!isset($pagePortfolioItem)) {
-            header("location:index.php");
-              exit;
-            }
 
-            //Set pageTitle from $pagePortfolioItem title
-            $pageTitle = $pagePortfolioItem["title"];
+
+
+
 
             //Set Nav link to selected
 
