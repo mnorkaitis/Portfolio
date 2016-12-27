@@ -35,3 +35,7 @@ if (isset($_GET["page"])) {
     <li class="nav-link <?php if ($pageNav == "contact") {echo "nav-link-select";} ?> "><a href="/?page=contact">Contact</a></li>
   </ul>
 </nav>
+
+<div class="BREADCRUMBS">
+ <a href="index.php">Home</a> &gt; <a href="index.php?page=<?php echo $pageNav; ?>"><?php echo $pageNav; ?></a>
+</div>

@@ -36,6 +36,4 @@ function list_items_with_html($id, $databaseItem) {
   return $output;
 }
 
-
-
 ?>

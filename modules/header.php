@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title><?php echo $pageTitle; ?> - Matt Norkaitis Portfolio</title>
+  <title>SET TITLE LATER FROM PAGE MODULE</title>
   <link rel="stylesheet" href="/assets/css/main-style.css" type="text/css">
   <?php
     // Include database
